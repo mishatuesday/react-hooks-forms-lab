@@ -10,11 +10,13 @@ function ShoppingList({ items }) {
     setSelectedCategory(event.target.value);
   }
 
-  const itemsToDisplay = items.filter((item) => {
+  const itemsByFilter = items.filter((item) => {
     if (selectedCategory === "All") return true;
 
     return item.category === selectedCategory;
   });
+
+  const itemsToDisplay = itemsByFilter;
 
   return (
     <div className="ShoppingList">
